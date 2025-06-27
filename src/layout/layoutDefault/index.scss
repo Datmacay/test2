@@ -1,0 +1,136 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 25px 80px;
+  box-sizing: border-box;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position: sticky;
+  z-index: 99;
+  top: 0;
+
+  &__logo {
+    max-width: 100px; // ảnh to nhất là 150px
+    min-width: 60px; // ảnh nhỏ nhất là 60px
+    flex-shrink: 1; // cho phép co lại, nhưng giới hạn bởi min-width
+    transition: all 0.2s ease;
+
+    a {
+      display: inline-block;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin: 0;
+    padding: 0 15px;
+    list-style-type: none;
+    font-size: 18px;
+    font-weight: 500;
+
+    &--link {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  &__auth {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    padding: 20px 15px;
+    outline: none;
+  }
+
+  &__end {
+    display: flex;
+    align-items: center;
+  }
+
+  &__cart {
+    font-size: 22px;
+    margin-left: 10px;
+  }
+
+  &__event {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.footer {
+  margin-top: 100px;
+  background-color: #f6f6f8;
+  padding-top: 100px;
+  padding-bottom: 70px;
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__dat {
+    margin-top: 50px;
+  }
+
+  &__img {
+    max-width: 100px;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    margin: 10px 0px;
+    font-size: 14px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #313131;
+    margin: 0 0 16px;
+    line-height: 1;
+  }
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    font-size: 12px;
+    color: #5d5d5d;
+    margin-top: 10px;
+    letter-spacing: 0.3px;
+    font-weight: 500;
+  }
+}
+
+.custom-vertical {
+  margin-top: 20px;
+}
