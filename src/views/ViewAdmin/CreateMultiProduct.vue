@@ -39,6 +39,16 @@
               </el-form-item>
             </el-col>
             <el-col :span="24">
+              <el-form-item prop="size" label="Size">
+                <el-input v-model="product.size"/>
+              </el-form-item>
+            </el-col>
+            <el-col :span="24">
+              <el-form-item prop="color" label="Color">
+                <el-input v-model="product.color"/>
+              </el-form-item>
+            </el-col>
+            <el-col :span="24">
               <el-form-item prop="description" label="Description">
                 <el-input v-model="product.description" type="textarea" />
               </el-form-item>
@@ -89,6 +99,8 @@ const rules = {
   quantity: [{ required: true, message: 'Vui lòng nhập quantity', trigger: 'blur' }],
   description: [{ required: true, message: 'Vui lòng nhập mô tả', trigger: 'blur' }],
   picture: [{ required: true, message: 'Vui lòng chọn hình ảnh', trigger: 'change' }],
+  size: [{ required: true, message: 'Vui lòng chọn size', trigger: 'change' }],
+  color: [{ required: true, message: 'Vui lòng chọn mau sac', trigger: 'change' }],
 }
 
 const handleClick = () => {
@@ -102,6 +114,9 @@ const handleAdd = () => {
     quantity: 1,
     price: 1,
     description: '',
+    size:'',
+    color:'',
+    categoryId:1,
     picture: null,
   })
 }
@@ -143,6 +158,9 @@ const submitForm = async () => {
     formData.append(`products[${index}].title`, product.title)
     formData.append(`products[${index}].price`, product.price.toString())
     formData.append(`products[${index}].quantity`, product.quantity.toString())
+    formData.append(`products[${index}].size`, product.size)
+    formData.append(`products[${index}].color`, product.color)
+    formData.append(`products[${index}].categoryId`, product.categoryId.toString())
     formData.append(`products[${index}].description`, product.description)
     if (product.picture) {
       formData.append(`products[${index}].picture`, product.picture)

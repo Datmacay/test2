@@ -5,6 +5,9 @@ export interface Product {
   price: number
   description: string
   picture: File | null
+  size:string
+  color:string
+  categoryId:number
 }
 
 export interface ProductResponse {

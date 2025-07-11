@@ -7,7 +7,7 @@
             <div></div>
             <div style="display: flex; align-items: center">
               <CreateMultiProduct />
-              <UpdateMultiProduct :listIdProductUpdate="listIdProductUpdate" />
+              <!-- <UpdateMultiProduct :listIdProductUpdate="listIdProductUpdate" /> -->
             </div>
           </div>
         </div>
@@ -69,14 +69,13 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref, watch, watchEffect } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import type { TableInstance } from 'element-plus'
 import { getProducts } from '../services/ProductService'
 import DeleteProduct from './DeleteProduct.vue'
 import UpdateProduct from './UpdateProduct.vue'
 import ProductSold from './ProductSold.vue'
 import CreateMultiProduct from './ViewAdmin/CreateMultiProduct.vue'
-import UpdateMultiProduct from './ViewAdmin/UpdateMultiProduct.vue'
 import { ProductResponse } from '../common/Common'
 
 const multipleTableRef = ref<TableInstance>()

@@ -34,7 +34,7 @@
 import avatar from '@/assets/bear-9201157_1280.jpg'
 import { isValidToken } from '../helper/isValidToken'
 import { getRoles } from '../helper/getRoles'
-import { onMounted, ref, watchEffect } from 'vue'
+import { onMounted, ref } from 'vue'
 import { getInfo } from '../services/UserService'
 import { RouterLink } from 'vue-router'
 
@@ -49,7 +49,7 @@ if (isToken) {
 onMounted(() => {
   const fetchAPI = async () => {
     const res = await getInfo('user/info', token)
-    infoUser.value = res
+    infoUser.value = res;
   }
 
   fetchAPI()

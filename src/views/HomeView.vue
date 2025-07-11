@@ -8,7 +8,7 @@
               <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
                 <div class="banner__content">
                   <p class="banner__desc">Smart Products</p>
-                  <h1 class="banner__title">Summer Offer<br />2024 Collection</h1>
+                  <h1 class="banner__title">Summer Offer<br />2025 Collection</h1>
                   <button class="banner__btn">SHOP NOW</button>
                 </div>
               </el-col>

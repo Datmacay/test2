@@ -4,7 +4,6 @@ import {
   patchWithFormData,
   post,
   postWithFormData,
-  put,
   putWithFormData,
 } from '../utils/index'
 
@@ -12,6 +11,17 @@ export const getProducts = async (path: string) => {
   const res = await get(path)
   return res
 }
+
+export const getCategories = async (path: string) => {
+  const res = await get(path)
+  return res;
+}
+
+export const search = async (path: string) => {
+  const res = await get(path)
+  return res;
+}
+
 
 export const getProductById = async (path: string) => {
   const res = await get(path)

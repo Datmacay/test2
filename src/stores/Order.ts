@@ -17,4 +17,13 @@ export const useOrderCart = defineStore('order', () => {
     order.value = value
   }
   return { order, handleOrder }
-})
+});
+
+export const usePaymentOrder = defineStore('payment', () => {
+  const payment = ref();
+  const handleProcessPayment = (value: any) => {
+    payment.value = value;
+  }
+  return { payment, handleProcessPayment }
+});
+

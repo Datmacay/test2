@@ -4,7 +4,6 @@ import Login from '../components/Auth/Login.vue'
 import LayoutDefault from '../layout/layoutDefault/layoutDefault.vue'
 import AboutView from '../views/AboutView.vue'
 import LayoutAdmin from '../layout/layoutAdmin/LayoutAdmin.vue'
-import Dashboard from '../views/Dashboard.vue'
 import ProductDetail from '../views/ProductDetail.vue'
 import { getRoles } from '../helper/getRoles'
 import { isValidToken } from '../helper/isValidToken'
@@ -18,8 +17,14 @@ import Order from '../views/Order.vue'
 import Myinfo from '../views/Myinfo.vue'
 import Bill from '../views/Bill.vue'
 import Logout from '../views/Logout.vue'
-import Test from '../views/Test.vue'
 import ChangePassword from '../views/ChangePassword.vue'
+import Authentication from '../components/Auth/Authentication.vue'
+import Success from '../views/Success.vue'
+import UserView from '../views/UserView.vue'
+import Search from '../views/Search.vue'
+import Register from '../views/Register.vue'
+import CategoryManage from '../views/CategoryManage.vue'
+import DashBoard from '../views/ViewAdmin/DashBoard.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,9 +40,9 @@ const router = createRouter({
           component: HomeView,
         },
         {
-          path: '/test',
-          name: 'test',
-          component: Test,
+          path: '/register',
+          name: 'register',
+          component: Register,
         },
         {
           path: '/cart',
@@ -65,6 +70,16 @@ const router = createRouter({
             requiresAuth: true,
             roles: ['ADMIN', 'USER'],
           },
+        },
+        {
+          path: '/authenticate',
+          name: 'authenticate',
+          component: Authentication,
+        },
+        {
+          path: '/search',
+          name: 'search',
+          component: Search,
         },
         {
           path: '/bill',
@@ -118,6 +133,11 @@ const router = createRouter({
           name: 'login',
           component: Login,
         },
+        {
+          path: '/success',
+          name: 'success',
+          component: Success,
+        },
       ],
     },
     {
@@ -132,7 +152,7 @@ const router = createRouter({
         {
           path: 'dashboard',
           name: 'dashboard',
-          component: Dashboard,
+          component: DashBoard,
         },
         {
           path: 'orders',
@@ -143,6 +163,16 @@ const router = createRouter({
           path: 'products',
           name: 'products',
           component: ProductManage,
+        },
+        {
+          path: 'category',
+          name: 'category',
+          component: CategoryManage,
+        },
+        {
+          path: 'user',
+          name: 'user',
+          component: UserView,
         },
         {
           path: 'products/create',

@@ -7,19 +7,19 @@
     </div>
     <ul class="header__nav">
       <li class="header__item">
-        <RouterLink to="/" class="header__item--link">Home</RouterLink>
+        <RouterLink to="/" class="header__item--link">Trang chủ</RouterLink>
       </li>
       <li class="header__item">
-        <RouterLink to="/about" class="header__item--link">About Us</RouterLink>
+        <RouterLink to="/blog" class="header__item--link">Danh mục</RouterLink>
       </li>
       <li class="header__item">
-        <RouterLink to="/blog" class="header__item--link">Services</RouterLink>
+        <RouterLink to="/blog" class="header__item--link">Tin tức</RouterLink>
       </li>
       <li class="header__item">
-        <RouterLink to="/blog" class="header__item--link">Blog</RouterLink>
+        <RouterLink to="/contact" class="header__item--link">Liên hệ</RouterLink>
       </li>
       <li class="header__item">
-        <RouterLink to="/contact" class="header__item--link">Contact</RouterLink>
+        <RouterLink to="/search" class="header__item--link">Tìm kiếm</RouterLink>
       </li>
     </ul>
     <div class="header__end">

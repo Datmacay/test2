@@ -67,11 +67,7 @@
               <div class="cart__chose">
                 Tổng cộng ({{ dataBuy.length }} Sản phẩm): {{ filterData }}VND
               </div>
-              <Order
-                :dataBuy="dataBuy"
-                :filterData="filterData"
-                @handleEmitCart="handleUpdateCart"
-              />
+              <el-button @click="handleProcessOrder" type="primary">Mua hàng</el-button>
             </div>
           </div>
         </el-card>
@@ -88,15 +84,20 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref, watchEffect } from 'vue'
+import { computed, ref } from 'vue'
 import { CartFrame, useCartStore } from '../stores/Cart'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRoute, useRouter } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { ElMessage } from 'element-plus'
-import Order from './Order.vue'
+import { Purchase, usePaymentOrder } from '../stores/Order'
+import { jwtDecode } from 'jwt-decode'
 
 const { handleDelete } = useCartStore()
 const { cartStored } = storeToRefs(useCartStore())
+const { handleProcessPayment } = usePaymentOrder()
+const token = localStorage.getItem('accessToken')!
+const userId = jwtDecode(token).sub!;
+const route = useRouter();
 
 const dataBuy = ref<CartFrame[]>([])
 const num = ref<number>(1)
@@ -139,8 +140,28 @@ const handleDeleteItem = (value: number) => {
   })
 }
 
-const handleUpdateCart = (value: number[]) => {
-  cartStored.value = cartStored.value.filter((item) => !value.includes(item.id))
+const handleProcessOrder = async () => {
+  const dataPurchase: Purchase[] = []
+  const listIdProduct: number[] = []
+
+  dataBuy.value.forEach((item: CartFrame) => {
+    dataPurchase.push({
+      productId: item.id,
+      price: item.price,
+      quantity: item.quantity,
+    })
+    listIdProduct.push(item.id)
+  })
+
+  // cartStored.value = cartStored.value.filter((item) => !listIdProduct.includes(item.id))
+
+  handleProcessPayment({
+    userId: parseInt(userId),
+    totalAmount: filterData.value,
+    purchaseRequests: dataPurchase,
+  });
+
+  route.push("/order");
 }
 </script>
 

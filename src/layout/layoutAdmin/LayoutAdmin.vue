@@ -1,5 +1,5 @@
 <template>
-  <div class="layoutAdmin" style="background-color: #212631; color: #fff">
+  <div >
     <el-container>
       <el-aside width="250px" style="overflow: hidden">
         <SiderAdmin />

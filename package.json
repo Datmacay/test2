@@ -13,10 +13,18 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@coreui/chartjs": "^4.0.0",
+    "@coreui/coreui": "^5.4.1",
+    "@coreui/icons": "^3.0.1",
+    "@coreui/icons-vue": "^2.2.0",
+    "@coreui/utils": "^2.0.2",
+    "@coreui/vue": "^5.5.0",
+    "@coreui/vue-chartjs": "^3.0.0",
     "@element-plus/icons-vue": "^2.3.1",
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "axios": "^1.9.0",
     "bootstrap": "^5.3.6",
+    "chart.js": "^4.5.0",
     "element-plus": "^2.9.10",
     "jwt-decode": "^4.0.0",
     "pinia": "^3.0.1",
